@@ -1,14 +1,14 @@
 # AdvisementChatBot
 A design for the Chatbot Advisement App with Watson AI
 
-#Team Members
+# Team Members
 Richard Yeung
 Sena
 Sanaria
 Zeynep
 
-#About
+# About
 This was our attempt to create a Chatbot that would help with simple academic advisement for BMCC.
 
-#Website
+# Website
 https://sites.google.com/view/bmcccisadvisement/home
