@@ -1,0 +1,993 @@
+{
+  "intents": [
+    {
+      "intent": "good_bye",
+      "examples": [
+        {
+          "text": "ciao"
+        },
+        {
+          "text": "cya"
+        },
+        {
+          "text": "good bye"
+        },
+        {
+          "text": "later"
+        },
+        {
+          "text": "talk to you soon"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "greetings",
+      "examples": [
+        {
+          "text": "ey"
+        },
+        {
+          "text": "good afternoon"
+        },
+        {
+          "text": "good day"
+        },
+        {
+          "text": "good morning"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "no",
+      "examples": [
+        {
+          "text": "nah"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "noo"
+        },
+        {
+          "text": "nop"
+        },
+        {
+          "text": "nope"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "recommended_classes",
+      "examples": [
+        {
+          "text": "for this semester what classes do I need"
+        },
+        {
+          "text": "what classes for mt major do I need?"
+        },
+        {
+          "text": "What classes should I take?"
+        },
+        {
+          "text": "What general ed classes do I need?"
+        },
+        {
+          "text": "Which classes do I need to take?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "recommended_credits",
+      "examples": [
+        {
+          "text": "how many credits do I have left to graduate"
+        },
+        {
+          "text": "how many credits do i need next semester"
+        },
+        {
+          "text": "how many credits do i need to graduate"
+        },
+        {
+          "text": "how many credits should i be taking this semester"
+        },
+        {
+          "text": "how mnay credits do I need"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "recommended_major",
+      "examples": [
+        {
+          "text": "I would like information on a particular major"
+        },
+        {
+          "text": "major info"
+        },
+        {
+          "text": "what majors does this school have"
+        },
+        {
+          "text": "what majors do you have"
+        },
+        {
+          "text": "which major is best for me"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Start_Over",
+      "examples": [
+        {
+          "text": "go back to top"
+        },
+        {
+          "text": "i want to start over"
+        },
+        {
+          "text": "lets take this to the top"
+        },
+        {
+          "text": "lets tart over"
+        },
+        {
+          "text": "start over"
+        }
+      ],
+      "description": "takes users back to the top of the dialog path"
+    },
+    {
+      "intent": "thank_you",
+      "examples": [
+        {
+          "text": "appreciate it"
+        },
+        {
+          "text": "cheers"
+        },
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "thx"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "yes",
+      "examples": [
+        {
+          "text": "okay"
+        },
+        {
+          "text": "yea"
+        },
+        {
+          "text": "yes"
+        },
+        {
+          "text": "yes please"
+        },
+        {
+          "text": "yup"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "college_plan",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "2 year plan",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "3 year plan",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "major",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Computer Information Systems",
+          "synonyms": [
+            "CIS"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Computer Network Technology",
+          "synonyms": [
+            "CNT"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Computer Science",
+          "synonyms": [
+            "CS"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Geographic Information Science",
+          "synonyms": [
+            "GIS"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "semester",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Semester 1",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Semester 2",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Semester 3",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Semester 4",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Semester 5",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_9_1615148139237",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1615082700358",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1615082700372",
+      "previous_sibling": "handler_7_1615082700372"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1615150529142",
+      "context": {
+        "major": "@major"
+      },
+      "conditions": "@major",
+      "event_name": "input",
+      "dialog_node": "handler_1_1615150529144"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is your college plan? 2 years or 3 years?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_8_1615398831905",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1615398831921",
+      "previous_sibling": "handler_6_1615398831921"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your major is not recognized here. Available majors are CS, CIS, CNT, GIS."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_9_1615398888710",
+      "conditions": "true",
+      "event_name": "nomatch",
+      "dialog_node": "handler_1_1616166026084",
+      "previous_sibling": "handler_2_1615398888713"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "What major are you taking/ planning on taking?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_9_1615398888710",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1615398888713",
+      "previous_sibling": "handler_8_1615398888713"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1615398907200",
+      "context": {
+        "semester": "@semester"
+      },
+      "conditions": "@semester",
+      "event_name": "input",
+      "dialog_node": "handler_3_1615398907203"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "What semester do you want info on?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1615398907200",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1615398907203",
+      "previous_sibling": "handler_3_1615398907203"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1615398831905",
+      "context": {
+        "college_plan": "@college_plan"
+      },
+      "conditions": "@college_plan",
+      "event_name": "input",
+      "dialog_node": "handler_6_1615398831921"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your response is not recognized. Please enter either 2 year plan or 3 year plan."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_8_1615398831905",
+      "conditions": "true",
+      "event_name": "nomatch",
+      "dialog_node": "handler_6_1616165915474",
+      "previous_sibling": "handler_1_1615398831921"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your answer is not recognized. Please respond with \"Semester x\" where x is 1-5."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_8_1615398907200",
+      "conditions": "true",
+      "event_name": "nomatch",
+      "dialog_node": "handler_6_1616166127772",
+      "previous_sibling": "handler_5_1615398907203"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_4_1615082700358",
+      "event_name": "input",
+      "dialog_node": "handler_7_1615082700372"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1615150529142",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1615150529144",
+      "previous_sibling": "handler_1_1615150529144"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1615398888710",
+      "context": {
+        "major": "@major"
+      },
+      "conditions": "@major",
+      "event_name": "input",
+      "dialog_node": "handler_8_1615398888713"
+    },
+    {
+      "type": "standard",
+      "title": "Collect_Name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello $name. "
+              },
+              {
+                "text": "Welcome $name."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "name": "<? input.text.substring(0, 1).toUpperCase() + input.text.substring(1) ?>"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1615148200463"
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1615082665234"
+    },
+    {
+      "type": "frame",
+      "title": "Major_Info",
+      "parent": "node_4_1615149932395",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "@major",
+      "dialog_node": "node_3_1615082926105",
+      "digress_out": "allow_all",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "RecommendedClass",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We first need to get more information to answer your inquery."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#recommended_classes",
+      "dialog_node": "node_3_1615084510608",
+      "previous_sibling": "node_4_1615149932395"
+    },
+    {
+      "type": "frame",
+      "title": "To Continue or Move back to Need_Major",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you want info for the other majors?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615082926105",
+      "conditions": "true",
+      "dialog_node": "node_3_1615150668019"
+    },
+    {
+      "type": "frame",
+      "title": "Get_Info",
+      "parent": "node_3_1615084510608",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1615398463846"
+    },
+    {
+      "type": "standard",
+      "title": "GeneralInfoAboutMajor",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Which Major do you need info for? We have: Computer Science(CS), Computer Information Science(CIS), Computer Network Technology(CNT), and Geographic Information Science(GIS)."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "major": null,
+        "semester": null,
+        "college_plan": null
+      },
+      "conditions": "#recommended_major",
+      "dialog_node": "node_4_1615149932395",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "If yes",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_3_1615150668019",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1615149932395"
+      },
+      "conditions": "#yes",
+      "dialog_node": "node_7_1615150756468"
+    },
+    {
+      "type": "standard",
+      "title": "Chatbot gets Purpose",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I can provide general information about Majors and recommend classes to take."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "major": null,
+        "semester": null,
+        "college_plan": null
+      },
+      "dialog_node": "node_8_1615148200463",
+      "previous_sibling": "node_2_1615082665234"
+    },
+    {
+      "type": "standard",
+      "title": "If no",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What else do you need?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615150668019",
+      "conditions": "#no",
+      "dialog_node": "node_8_1615150787114",
+      "previous_sibling": "node_7_1615150756468"
+    },
+    {
+      "type": "standard",
+      "title": "Start Over",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1615148200463"
+      },
+      "conditions": "#Start_Over",
+      "dialog_node": "node_9_1615148139237",
+      "previous_sibling": "node_3_1615084510608"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You are on a $college_plan, taking $major, and are in $semester."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615084510608",
+      "disabled": true,
+      "conditions": "true",
+      "dialog_node": "response_10_1615084582772",
+      "previous_sibling": "node_3_1615398463846"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$major has ....."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615082926105",
+      "conditions": "$major==\"Computer Science\"",
+      "dialog_node": "response_1_1615083561912",
+      "previous_sibling": "slot_9_1615150529142"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Seems like there was an error. For more info, please check out <a href==\"https//www.exmaple.com>our website.</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615082926105",
+      "conditions": "true",
+      "dialog_node": "response_1_1615083731879",
+      "previous_sibling": "response_9_1615083630866"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$major has...."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615082926105",
+      "conditions": "$major==\"Computer Information Systems\"",
+      "dialog_node": "response_2_1615083577574",
+      "previous_sibling": "response_1_1615083561912"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$college_plan, $major, $semester"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615398463846",
+      "conditions": "$college_plan==\"2 year plan\" && $major==\"Computer Science\" && $semester==\"Semester 1\"",
+      "dialog_node": "response_2_1615398925282"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$college_plan, $major, $semester"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615398463846",
+      "conditions": "$college_plan==\"3 year plan\" && $major==\"Geographic Information Science\" && $semester==\"Semester 4\"",
+      "dialog_node": "response_2_1616165531878",
+      "previous_sibling": "response_5_1616165530953"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$college_plan, $major, $semester"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615398463846",
+      "conditions": "$college_plan==\"2 year plan\" && $major==\"Computer Network Technology\" && $semester==\"Semester 3\"",
+      "dialog_node": "response_5_1616165530953",
+      "previous_sibling": "response_9_1616165343841"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$major has...."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615082926105",
+      "conditions": "$major==\"Computer Network Technology\"",
+      "dialog_node": "response_6_1615083611074",
+      "previous_sibling": "response_2_1615083577574"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$major has...."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615082926105",
+      "conditions": "$major==\"Geographic Information Science\"",
+      "dialog_node": "response_9_1615083630866",
+      "previous_sibling": "response_6_1615083611074"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$college_plan, $major, $semester"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1615398463846",
+      "conditions": "$college_plan==\"3 year plan\" && $major==\"Computer Information Systems\" && $semester==\"Semester 2\"",
+      "dialog_node": "response_9_1616165343841",
+      "previous_sibling": "response_2_1615398925282"
+    },
+    {
+      "type": "slot",
+      "parent": "node_2_1615082665234",
+      "dialog_node": "slot_4_1615082700358"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1615398463846",
+      "variable": "$college_plan",
+      "dialog_node": "slot_8_1615398831905",
+      "previous_sibling": "response_2_1616165531878"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1615398463846",
+      "variable": "$semester",
+      "dialog_node": "slot_8_1615398907200",
+      "previous_sibling": "slot_9_1615398888710"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1615082926105",
+      "variable": "$major",
+      "dialog_node": "slot_9_1615150529142",
+      "previous_sibling": "node_3_1615150668019"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1615398463846",
+      "variable": "$major",
+      "dialog_node": "slot_9_1615398888710",
+      "previous_sibling": "slot_8_1615398831905"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. I am a chatbot here to provide with some general information about BMCC. May I have your name?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "CollegeQuestions",
+  "language": "en",
+  "description": ""
+}
